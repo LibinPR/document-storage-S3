@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DocumentStorageApplication {
     public static void main(String[] args) {
         SpringApplication.run(DocumentStorageApplication.class, args);
+        System.out.println("Backend UP....");
     }
 }
