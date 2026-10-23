@@ -1,0 +1,15 @@
+target/
+.env
+.env.*
+!.env.example
+*.log
+.idea/
+.vscode/
+.DS_Store
+downloaded-*.txt
+empty.txt
+oversized.txt
+page-a.txt
+page-b.txt
+page-c.txt
+sample-integration.txt

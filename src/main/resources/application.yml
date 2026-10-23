@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: user-document-storage-service
+  jackson:
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: ${PORT:8080}
+
+app:
+  aws:
+    region: ${AWS_REGION:ap-south-1}
+    s3-bucket: ${S3_BUCKET_NAME:}
+  documents:
+    default-page-size: ${DOCUMENT_DEFAULT_PAGE_SIZE:20}
+    max-page-size: ${DOCUMENT_MAX_PAGE_SIZE:100}
+    cursor-signing-secret: ${DOCUMENT_CURSOR_SIGNING_SECRET:}
+    presigned-url-ttl-seconds: ${DOCUMENT_PRESIGNED_URL_TTL_SECONDS:300}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
